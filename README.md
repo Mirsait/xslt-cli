@@ -8,6 +8,11 @@ Transformation XML with XSL to HTML
 
 Download from https://github.com/mirsait/xslt-cli
 
+```bash
+$ git clone https://github.com/mirsait/xslt-cli
+$ cd xslt-cli
+```
+
 ## Usage
 
 Run the project directly, via `:main-opts` (`-m mirsait.xslt-cli`):
@@ -41,6 +46,23 @@ $ java -jar target/net.clojars.mirsait/xslt-cli-0.1.0-SNAPSHOT.jar file.xml file
 ```
 
 ## Examples
+
+Run uberjar:
+
+```bash
+$ clojure -T:build ci
+$ java -jar target/net.clojars.mirsait/xslt-cli-0.1.0-SNAPSHOT.jar examples/book.xml examples/book.xsl examples/book.html
+```
+
+or using a shell-script `transform.sh` in examples directory:
+
+```bash
+$ clojure -T:build ci
+$ cd examples
+$ ./transform.sh book
+```
+> The script will create the output folder using files XML and XSL and place the HTML-result in it.
+> The names of all three files are the same. In this case, book.xml, book.xsl and output/book.html.
 
 ...
 
